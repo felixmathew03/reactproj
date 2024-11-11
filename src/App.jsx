@@ -3,14 +3,15 @@ import Nav from './Pages/Nav';
 import Home from './Pages/Home';
 import Details from './Pages/Details';
 import './App.css'
+import { useState } from 'react';
 
 function App() {
- 
+ const [search,setSearch]=useState("");
   return (
     <BrowserRouter>
-      <Nav/>
+      <Nav setSearch={setSearch}/>
       <Routes>
-        <Route path='/' Component={Home}/>
+        <Route path='/' element={<Home search={search}/>}/>
         <Route path='/details/:id' Component={Details}/>
       </Routes>
     </BrowserRouter>

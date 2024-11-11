@@ -1,9 +1,10 @@
+import React from "react";
 import "../App.css"
-function Nav(){
+const Nav=({setSearch})=>{
     return (
         <><nav>
       <h3>Flip.com</h3>
-      <input className="input" name="text" placeholder="Search for products and more..."  type="search"/>
+      <input className="input" onChange={(e)=>{setSearch(e.target.value)}} name="text" placeholder="Search for products and more..."  type="search"/>
       <div className="log">
         <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/profile-52e0dc.svg" alt="" /><p>Login</p>
       </div>
